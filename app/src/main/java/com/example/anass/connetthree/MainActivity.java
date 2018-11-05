@@ -1,5 +1,6 @@
 package com.example.anass.connetthree;
 
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayout;
@@ -57,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
         draw = false;
         winnerTextView.setVisibility(View.INVISIBLE);
         playAgainButton.setVisibility(View.INVISIBLE);
+        winnerTextView.setTextColor(Color.BLACK);
 
         for (int i = 0; i < gridLayout.getChildCount(); i++) {
             ((ImageView) gridLayout.getChildAt(i)).setImageDrawable(null);
@@ -76,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
                 String winnerPlayer = (activePlayer == 0) ? "red " : "yellow ";
                 String winnerText = winnerPlayer + " has won !";
                 winnerTextView.setText(winnerText);
+                winnerTextView.setTextColor((activePlayer == 0) ? Color.RED : Color.YELLOW);
                 winnerTextView.setVisibility(View.VISIBLE);
                 playAgainButton.setVisibility(View.VISIBLE);
             }
